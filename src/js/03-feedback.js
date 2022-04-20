@@ -21,10 +21,12 @@ function onFormSubmit(e) {
     const formEmail = email;
     const formMessage = message;
 
-    form.reset();
-    console.log(`email: ${formEmail}`)
-    console.log(`message: ${message}`)
-    localStorage.clear()
+    if (formEmail || formMessage) {
+        form.reset();
+        console.log(`email: ${formEmail}`)
+        console.log(`message: ${formMessage}`)
+        localStorage.clear()
+    };
 };
 
 function updateForm() {
