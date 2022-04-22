@@ -21,12 +21,14 @@ function onFormSubmit(e) {
     const formEmail = email;
     const formMessage = message;
 
-    if (formEmail || formMessage) {
-        form.reset();
-        console.log(`email: ${formEmail}`)
-        console.log(`message: ${formMessage}`)
-        localStorage.clear()
+    if (!formEmail || !formMessage) {
+        return alert('Заполните все поля!')
     };
+
+    form.reset();
+    console.log(`email: ${formEmail}`)
+    console.log(`message: ${formMessage}`)
+    localStorage.clear()
 };
 
 function updateForm() {
@@ -39,6 +41,7 @@ function updateForm() {
         formData.message = message;
     }
 };
+
 
 function onFormInput(e) {
     formData.email = refs.formRef.elements.email.value;
